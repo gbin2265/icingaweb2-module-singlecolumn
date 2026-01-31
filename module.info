@@ -1,0 +1,7 @@
+Module: singlecolumn
+Version: 1.0.0
+Description: Single Column Dashboard
+ This module provides an alternative dashboard layout where dashlets are
+ displayed in a single column (stacked vertically) instead of the default
+ multi-column grid layout. Perfect for wide monitors or when you want to
+ see full-width dashlets.
