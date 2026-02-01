@@ -1,65 +1,21 @@
 /**
  * Single Column Dashboard Styles
  * 
- * This stylesheet forces dashlets to display in a single column layout
- * instead of the default multi-column grid. Each dashlet takes the full
- * width of the dashboard container.
+ * Minimal CSS - only changes width to 100%, keeps all other Icinga styling intact.
  */
 
 // Force all dashlets to full width in single column mode
 .dashboard.single-column {
-    // Override the inline-block display to stack vertically
     letter-spacing: normal;
     
     > .container {
-        // Force full width regardless of layout mode
         display: block !important;
         width: 100% !important;
         padding-right: 0 !important;
-        margin-bottom: 1em;
-        
-        // Ensure proper spacing between dashlets
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-        
-        // Container height - taller since full width
-        min-height: 25em;
-        max-height: none;
-        
-        // Allow content to determine height
-        height: auto;
-        
-        // Better visual separation between dashlets
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 1em;
-        
-        &:last-of-type {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        // Header styling for better visibility
-        > h1 {
-            font-size: 1.3em;
-            margin-bottom: 0.5em;
-            padding-bottom: 0.3em;
-            border-bottom: 2px solid #0095bf;
-        }
-        
-        // Content area styling
-        .content {
-            padding: 0.5em 0;
-        }
-        
-        // Tables should use full width
-        table {
-            width: 100%;
-        }
     }
 }
 
-// Responsive adjustments - always single column in this view
+// Responsive overrides - always single column
 #layout.wide-layout .dashboard.single-column > .container:not(:only-child),
 #layout.default-layout .dashboard.single-column > .container:not(:only-child),
 #layout.minimal-layout .dashboard.single-column > .container:not(:only-child),
@@ -68,41 +24,6 @@
     padding-right: 0 !important;
 }
 
-// When in two-column mode, still maintain single column for dashboard
 #layout.twocols .dashboard.single-column > .container {
     width: 100% !important;
-}
-
-// Print styles - single column is already print-friendly
-@media print {
-    .dashboard.single-column > .container {
-        page-break-inside: avoid;
-        border: 1px solid #999;
-        margin-bottom: 1em;
-        padding: 0.5em;
-    }
-}
-
-// Improve scrolling behavior for tall dashlets
-.dashboard.single-column {
-    overflow-y: auto;
-    overflow-x: hidden;
-    
-    > .container {
-        overflow: visible;
-        
-        // Scrollable content within each dashlet if needed
-        > .content {
-            overflow-x: auto;
-        }
-    }
-}
-
-// Visual indicator that this is single column mode (optional subtle styling)
-.dashboard.single-column::before {
-    content: "";
-    display: block;
-    height: 3px;
-    background: linear-gradient(to right, #0095bf, transparent);
-    margin-bottom: 1em;
 }
