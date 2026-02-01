@@ -6,10 +6,8 @@ This module provides an alternative dashboard layout where dashlets are displaye
 
 - **Full-width dashlets**: Each dashlet takes 100% of the available width
 - **Vertical stacking**: Dashlets are displayed one below another
-- **Easy switching**: Quickly toggle between single column and grid view
 - **All dashboards supported**: Works with all your existing dashboard panes
-- **Responsive**: Works on all screen sizes
-- **Print-friendly**: Better layout for printing dashboards
+- **Identical styling**: Same look and feel as standard Icinga Web 2, only wider
 
 ## Layout Comparison
 
@@ -31,8 +29,6 @@ This module provides an alternative dashboard layout where dashlets are displaye
 +--------------------------------+
 |           Dashlet3             |
 +--------------------------------+
-|           Dashlet4             |
-+--------------------------------+
 ```
 
 ## Requirements
@@ -40,8 +36,6 @@ This module provides an alternative dashboard layout where dashlets are displaye
 - Icinga Web 2 (>= 2.9.0)
 
 ## Installation
-
-### Manual Installation
 
 1. Extract the archive to your Icinga Web 2 modules directory:
 
@@ -55,34 +49,28 @@ tar -xzf singlecolumn-1.0.0.tar.gz -C /usr/share/icingaweb2/modules/
 icingacli module enable singlecolumn
 ```
 
-Or enable via the web interface:
-- Go to **Configuration** → **Modules**
-- Find "singlecolumn" and click **Enable**
+Or enable via the web interface: **Configuration** → **Modules** → **singlecolumn** → **Enable**
 
 ## Usage
 
-After enabling the module, you can access the single column dashboard in two ways:
+Navigate to the single column dashboard via URL:
 
-### Via Menu
-1. Click on **Dashboard** in the main menu
-2. Select **Single Column**
+```
+https://your-icinga-server/icingaweb2/singlecolumn/dashboard
+```
 
-### Via URL
-Navigate directly to: `https://your-icinga-server/icingaweb2/singlecolumn/dashboard`
+To select a specific pane, add the `pane` parameter:
 
-### Switching Between Views
+```
+https://your-icinga-server/icingaweb2/singlecolumn/dashboard?pane=Current%20Incidents
+```
 
-- When viewing the single column dashboard, click **"Grid View"** tab to return to the normal grid layout
-- When viewing the normal dashboard, use the menu to access single column view
-
-### Selecting Dashboard Panes
-
-Just like the normal dashboard, you can switch between different panes using the tabs. All your existing dashboard panes are available in single column mode.
+Use the **Grid View** tab to switch back to the normal multi-column layout.
 
 ## Configuration
 
-This module works out of the box with no configuration required. It uses your existing dashboard configuration from Icinga Web 2.
+No configuration required. The module uses your existing dashboard configuration.
 
 ## License
 
-This module is licensed under the GNU General Public License version 2 or later (GPLv2+).
+GPLv2+

@@ -6,19 +6,16 @@ The Single Column Dashboard module provides an alternative way to view your Icin
 
 ## Why Use Single Column?
 
-- **Better readability**: Full-width dashlets show more information without horizontal scrolling
+- **Better readability**: Full-width dashlets show more information
 - **Wide monitors**: Take advantage of ultra-wide displays
 - **Presentations**: Better for displaying on TV screens or projectors
-- **Printing**: More suitable layout for printed reports
-- **Accessibility**: Easier to navigate with screen readers
 
 ## How It Works
 
-The module adds a new view (`/singlecolumn/dashboard`) that loads your existing dashboard configuration but applies different CSS styling. No changes are made to your actual dashboard data - you can switch between grid and single column views at any time.
+The module adds a new view (`/singlecolumn/dashboard`) that loads your existing dashboard configuration but displays dashlets at 100% width. No changes are made to your actual dashboard data.
 
 ## Navigation
 
-- **Menu**: Dashboard → Single Column
 - **URL**: `your-server/icingaweb2/singlecolumn/dashboard`
 - **Tabs**: Use "Grid View" tab to switch back to normal layout
 
