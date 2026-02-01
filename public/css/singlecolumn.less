@@ -12,6 +12,7 @@
         display: block !important;
         width: 100% !important;
         padding-right: 0 !important;
+        overflow-x: hidden;
     }
 }
 
@@ -26,4 +27,18 @@
 
 #layout.twocols .dashboard.single-column > .container {
     width: 100% !important;
+}
+
+// Forceer tabellen om binnen de container te passen
+.dashboard.single-column > .container table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+// Lange tekst in cellen wordt afgekapt met ...
+.dashboard.single-column > .container td,
+.dashboard.single-column > .container th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
